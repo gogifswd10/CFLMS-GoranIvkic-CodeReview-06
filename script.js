@@ -11,89 +11,77 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-function blog() {
-    var location = [];
-    var Location = /** @class */ (function () {
-        function Location(city, zip, address, image) {
-            this.city = '';
-            this.zip = '';
-            this.address = '';
-            this.image = '';
-            this.city = city;
-            this.zip = zip;
-            this.address = address;
-            this.image = image;
-            // location.push(this);
-        }
-        Location.prototype.displayLocation = function () {
-            return "<div image src=\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li> " + this.city + " </li>\n\t\t\t\t\t\t\t<li> " + this.zip + " </li>\n\t\t\t\t\t\t\t<li> " + this.address + " </li>\n\t\t\t\t\t\t\t<li> " + this.image + " </li>\n\t\t\t\t\t\t</ul>";
-        };
-        ;
-        return Location;
-    }());
-    ;
-    var Restaurant = /** @class */ (function (_super) {
-        __extends(Restaurant, _super);
-        function Restaurant(city, zip, address, image, restaurantName, addressOfRest, typeOfFood, web) {
-            return _super.call(this, city, zip, address, image) || this;
-        }
-        ;
-        Restaurant.prototype.displayRestaurant = function () {
-            return "<ul>\n\t\t\t\t\t\t<li> " + this.restaurantName + "</li>\n\t\t\t\t\t\t<li> " + this.addressOfRest + "</li>\n\t\t\t\t\t\t<li> " + this.typeOfFood + "</li>\n\t\t\t\t\t\t<li> " + this.web + "</li>\n\t\t\t\t\t</ul>";
-        };
-        ;
-        return Restaurant;
-    }(Location));
-    ;
-    var Event = /** @class */ (function (_super) {
-        __extends(Event, _super);
-        function Event(city, zip, address, image, eventName, eventWeb, eventDate, eventPrice) {
-            return _super.call(this, city, zip, address, image) || this;
-        }
-        ;
-        Event.prototype.displayEvent = function () {
-            return "<ul>\n\t\t\t\t\t\t<li> " + this.eventName + "</li>\n\t\t\t\t\t\t<li> " + this.eventWeb + "</li>\n\t\t\t\t\t\t<li> " + this.eventDate + "</li>\n\t\t\t\t\t\t<li> " + this.eventPrice + "</li>\n\t\t\t\t\t</ul>";
-        };
-        ;
-        return Event;
-    }(Location));
-    ;
-    var restaurants = new Array();
-    restaurants[0] = new Restaurant('ON Restaurant', 'Wehrgasse 8 1050 Vienna 01/5854900', 'japanese-food', 'http://www.restaurant-on.at');
-    restaurants[1] = new Restaurant('BioFrische', 'Stutterheimstrasse 6 1150 Vienna 01/9529215', 'bio-food', 'https://biofrische.wien');
-    var events = new Array();
-    events[0] = new Event('Cats - the Musical', 'http://catsmusical.at', 'Fr., 15.12.2020', '120€');
-    events[1] = new Event('Guns´n Roses', 'http://www.gunsandroses.com', 'Sat, 09.06.2020', '95.50€');
-    $('bootstrapWrapper').append("<div class=\"Restaurants\"><h1>RESTAURANTS</h1></div><div class=\"Events\"><h1>EVENTS</h1></div>");
-    var _loop_1 = function (i) {
-        $('.Restaurant').append("<div class = \"restaurantsName_" + i + "\"></div>");
-        $('.Restaurant').append("<div class = \"restaurantsAddress_" + i + "\"></div>");
-        $('.Restaurant').append("<div class = \"restaurantsFood_" + i + "\"></div>");
-        $('.Restaurant').append("<div class = \"restaurantsWeb_" + i + "\"></div>");
-        $(".restaurantName_" + i).on('click', function () {
-            $(".restaurantAddress_" + i).html("" + restaurants[i].displayRestaurant());
-            $(".restaurantTypeOfFood_" + i).html("" + restaurants[i].displayRestaurant());
-            $(".restaurantWeb_" + i).html("" + restaurants[i].displayRestaurant());
-        });
-    };
-    for (var i = 0; i < restaurants.length; i++) {
-        _loop_1(i);
+var arrayLocation = [];
+var Location2 = /** @class */ (function () {
+    function Location2(city, zip, address, imageName) {
+        this.city = '';
+        this.zip = '';
+        this.address = '';
+        this.imageName = '';
+        this.city = city;
+        this.zip = zip;
+        this.address = address;
+        this.imageName = imageName;
+        arrayLocation.push(this);
     }
-    ;
-    var _loop_2 = function (i) {
-        $('.Event').append("<div class = \"eventName_" + i + "\"></div>");
-        $('.Event').append("<div class = \"eventWeb_" + i + "\"></div>");
-        $('.Event').append("<div class = \"eventDate_" + i + "\"></div>");
-        $('.Event').append("<div class = \"eventPrice_" + i + "\"></div>");
-        $(".eventName_" + i).on('click', function () {
-            $(".eventWeb_" + i).html("" + events[i].displayEvent());
-            $(".eventDate_" + i).html("" + events[i].displayEvent());
-            $(".eventPrice_" + i).html("" + events[i].displayEvent());
-        });
+    Location2.prototype.display = function () {
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageName + " alt=\"Card image cap\">\n\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t<li><h2> " + this.city + " <h2></li>\n\t\t\t\t\t\t\t\t\t<li><h5> " + this.zip + " <h5></li>\n\t\t\t\t\t\t\t\t\t<li><h4> " + this.address + " <h4></li>\n\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://www.likealocalguide.com/vienna\" role=\"button\">Vienna City Guide</a>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
     };
-    for (var i = 0; i < events.length; i++) {
-        _loop_2(i);
-    }
-    ;
-}
+    return Location2;
+}());
 ;
+new Location2("St. Charles Church", "1010 Vienna", "Karlsplatz 1", "vienna.jpg");
+new Location2("Schönbrunn Park", "1130 Vienna", "Maxingstrasse 13B", "sbr.jpg");
+//////////////////////////////////////////////////////////////////////////////////////
+var Restaurant = /** @class */ (function (_super) {
+    __extends(Restaurant, _super);
+    function Restaurant(city, zip, address, imageName, restaurantName, typeOfFood, phone, web, imageRest) {
+        var _this = _super.call(this, city, zip, address, imageName) || this;
+        _this.restaurantName = '';
+        _this.typeOfFood = '';
+        _this.phone = '';
+        _this.web = '';
+        _this.imageRest = '';
+        _this.restaurantName = restaurantName;
+        _this.typeOfFood = typeOfFood;
+        _this.phone = phone;
+        _this.web = web;
+        _this.imageRest = imageRest;
+        return _this;
+    }
+    Restaurant.prototype.display = function () {
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t\t  \t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageRest + " alt=\"Card image cap\">\n\t\t\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t\t\t<li> " + this.restaurantName + " </li>\n\t\t\t\t\t\t\t\t\t\t\t<li> Food: " + this.typeOfFood + " </li>\n\t\t\t\t\t\t\t\t\t\t\t<li> " + this.phone + " </li>\n\t\t\t\t\t\t\t\t\t\t\t<li> " + this.web + " </li>\n\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.likealocalguide.com/vienna/eating\" class=\"btn btn-primary\">Discover Vienna's kitchen!</a>\n\t\t\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
+    };
+    return Restaurant;
+}(Location2));
+;
+new Restaurant('a', 'b', 'c', 'd', 'ON RESTAURANT', 'japanese', 'Wehrgasse 8, 1050 Vienna, 01/5854900', 'http://www.restaurant-on.at', 'on.jpg');
+new Restaurant('a', 'b', 'c', 'd', 'BIO-FRISCHE', 'bio-food', 'Stutterheimstrasse 6, 1150 Vienna, 01/9529215', 'https://biofrische.wien', 'bio.jpg');
+//////////////////////////////////////////////////////////////////////////////////////
+var Event2 = /** @class */ (function (_super) {
+    __extends(Event2, _super);
+    function Event2(city, zip, address, imageName, eventName2, eventWeb2, eventDate2, eventPrice2, imageEvent2) {
+        var _this = _super.call(this, city, zip, address, imageName) || this;
+        _this.eventName2 = '';
+        _this.eventWeb2 = '';
+        _this.eventDate2 = '';
+        _this.eventPrice2 = '';
+        _this.imageEvent2 = '';
+        _this.eventName2 = eventName2;
+        _this.eventWeb2 = eventWeb2;
+        _this.eventDate2 = eventDate2;
+        _this.eventPrice2 = eventPrice2;
+        _this.imageEvent2 = imageEvent2;
+        return _this;
+    }
+    Event2.prototype.display = function () {
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t  \t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageEvent2 + " alt=\"Card image cap\">\n\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t<li> " + this.eventName2 + " </li>\n\t\t\t\t\t\t\t\t<li> " + this.eventWeb2 + " </li>\n\t\t\t\t\t\t\t\t<li> " + this.eventDate2 + " </li>\n\t\t\t\t\t\t\t\t<li> Ticket-price: " + this.eventPrice2 + " </li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<a href=\"https://events.wien.info/de/\" class=\"btn btn-primary\">Discover events in Vienna!</a>\n\t\t  \t\t\t\t</div>\n\t\t\t\t\t</div></div>";
+    };
+    return Event2;
+}(Location2));
+;
+new Event2('a', 'b', 'c', 'd', 'CATS - THE MUSICAL', 'www.catsmusical.at', 'Fr., 15.12.2020', '120€', 'cats.jpg');
+new Event2('a', 'b', 'c', 'd', 'GUNS´n ROSES', 'www.gunsandroses.com', 'Sat, 09.06.2020', '95.50€', 'guns.png');
+for (var i = 0; i < arrayLocation.length; i++) {
+    document.getElementById('wrapper').innerHTML += arrayLocation[i].display();
+}

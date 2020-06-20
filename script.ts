@@ -1,107 +1,126 @@
+let arrayLocation:Array<any> = [];
 
+	class Location2 {
+		city: string = '';
+		zip: string = '';
+		address: string = '';
+		imageName: string = '';
 
-
-function blog() {
-
-let location:Array<any> = [];
-
-	class Location {
-		public city: string = '';
-		public zip: number = '';
-		public address: string = '';
-		public image: any = '';
-		
-		constructor(city: string, zip: number, address: string, image: any) {
+		constructor(city, zip, address, imageName) {
 			this.city = city;
 			this.zip = zip;
 			this.address = address;
-			this.image = image;
-			// location.push(this);
+			this.imageName = imageName;
+			arrayLocation.push(this);
 		}
 		
-		displayLocation() {
-			return `<div image src=
-						<ul>
-							<li> ${this.city} </li>
-							<li> ${this.zip} </li>
-							<li> ${this.address} </li>
-							<li> ${this.image} </li>
-						</ul>`;
-		};
+		display() {
+			
+			return `<div class="row m-2">
+						<div class="card" style="width: 25rem">
+								<img class="card-img-top" style="height: 18rem" src=img/${this.imageName} alt="Card image cap">
+			 				<div class="card-body text-center">
+								<ul class="text-center">
+									<li><h2> ${this.city} <h2></li>
+									<li><h5> ${this.zip} <h5></li>
+									<li><h4> ${this.address} <h4></li>
+									<a class="btn btn-primary btn-md" href="https://www.likealocalguide.com/vienna" role="button">Vienna City Guide</a>
+								</ul>
+			  				</div>
+						</div>
+					</div>`;
+			
+					
+			}
+
 	};
 
-	class Restaurant extends Location {
-		constructor(city: string, zip: number, address: string, image: any, restaurantName: string, addressOfRest: string, typeOfFood: string, web: string) {
-			super(city, zip, address, image)	
-		};
-		displayRestaurant() {
-			return `<ul>
-						<li> ${this.restaurantName}</li>
-						<li> ${this.addressOfRest}</li>
-						<li> ${this.typeOfFood}</li>
-						<li> ${this.web}</li>
-					</ul>`;
+	new Location2("St. Charles Church", "1010 Vienna", "Karlsplatz 1", "vienna.jpg");
+	new Location2("Schönbrunn Park", "1130 Vienna", "Maxingstrasse 13B", "sbr.jpg")
+	
+	
+//////////////////////////////////////////////////////////////////////////////////////
+	class Restaurant extends Location2 {
+		restaurantName: string = '';
+		typeOfFood: string = '';
+		phone: string = '';
+		web: string = '';
+		imageRest: string = '';
 
-		};
+		constructor(city, zip, address, imageName, restaurantName, typeOfFood, phone, web, imageRest) {
+			super(city, zip, address, imageName)
+			this.restaurantName = restaurantName;
+			this.typeOfFood = typeOfFood;
+			this.phone = phone;
+			this.web = web;
+			this.imageRest = imageRest;	
+		}
+
+		display() {
+				return `<div class="row m-2">
+								<div class="card" style="width: 25rem">
+					  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageRest} alt="Card image cap">
+					 				<div class="card-body text-center">
+										<ul class="text-center">
+											<li> ${this.restaurantName} </li>
+											<li> Food: ${this.typeOfFood} </li>
+											<li> ${this.phone} </li>
+											<li> ${this.web} </li>
+										</ul>
+										<a href="https://www.likealocalguide.com/vienna/eating" class="btn btn-primary">Discover Vienna's kitchen!</a>
+					  				</div>
+								</div>
+						</div>`;
+			
+			}	
+					
 	};
 
+	new Restaurant('a', 'b', 'c', 'd', 'ON RESTAURANT', 'japanese','Wehrgasse 8, 1050 Vienna, 01/5854900', 'http://www.restaurant-on.at', 'on.jpg');
+	new Restaurant('a', 'b', 'c', 'd', 'BIO-FRISCHE', 'bio-food', 'Stutterheimstrasse 6, 1150 Vienna, 01/9529215',  'https://biofrische.wien', 'bio.jpg');
 
-	class Event extends Location{
-		constructor(city: string, zip: number, address: string, image: any, eventName: string, eventWeb: string, eventDate: string, eventPrice: string) {
-			super(city, zip, address, image)	
-		};
-		displayEvent() {
-			return `<ul>
-						<li> ${this.eventName}</li>
-						<li> ${this.eventWeb}</li>
-						<li> ${this.eventDate}</li>
-						<li> ${this.eventPrice}</li>
-					</ul>`;
+//////////////////////////////////////////////////////////////////////////////////////
+	class Event2 extends Location2 {
+		eventName2: string = '';
+		eventWeb2: string = '';
+		eventDate2: string = '';
+		eventPrice2: string = '';
+		imageEvent2: string = ''; 
 
-		};
-	};
+		constructor(city, zip, address, imageName, eventName2, eventWeb2, eventDate2, eventPrice2, imageEvent2) {
+			super(city, zip, address, imageName)
+			this.eventName2 = eventName2;
+			this.eventWeb2 = eventWeb2;
+			this.eventDate2 = eventDate2;
+			this.eventPrice2 = eventPrice2;
+			this.imageEvent2 = imageEvent2; 
 
-	let restaurants: any = new Array(); 
-	restaurants[0] = new Restaurant('ON Restaurant', 'Wehrgasse 8 1050 Vienna 01/5854900', 'japanese-food', 'http://www.restaurant-on.at');
-	restaurants[1] = new Restaurant('BioFrische', 'Stutterheimstrasse 6 1150 Vienna 01/9529215', 'bio-food', 'https://biofrische.wien');
+		}
 
-	let events: any = new Array(); 
-	events[0] = new Event('Cats - the Musical', 'http://catsmusical.at', 'Fr., 15.12.2020', '120€');
-	events[1] = new Event('Guns´n Roses', 'http://www.gunsandroses.com', 'Sat, 09.06.2020' , '95.50€');
-	$('bootstrapWrapper').append(`<div class="Restaurants"><h1>RESTAURANTS</h1></div><div class="Events"><h1>EVENTS</h1></div>`);
-
-	
-	for (let i = 0; i < restaurants.length; i++){
-		$('.Restaurant').append(`<div class = "restaurantsName_${i}"></div>`);
-		$('.Restaurant').append(`<div class = "restaurantsAddress_${i}"></div>`);
-		$('.Restaurant').append(`<div class = "restaurantsFood_${i}"></div>`);
-		$('.Restaurant').append(`<div class = "restaurantsWeb_${i}"></div>`);
-
-		
-	
-		$(`.restaurantName_${i}`).on('click', function () {
-			$(`.restaurantAddress_${i}`).html(`${restaurants[i].displayRestaurant()}`);
-			$(`.restaurantTypeOfFood_${i}`).html(`${restaurants[i].displayRestaurant()}`);
-			$(`.restaurantWeb_${i}`).html(`${restaurants[i].displayRestaurant()}`);
-		});
-	
-		
-	};
-	
-
-	for (let i = 0; i < events.length; i++){
-		$('.Event').append(`<div class = "eventName_${i}"></div>`);
-		$('.Event').append(`<div class = "eventWeb_${i}"></div>`);
-		$('.Event').append(`<div class = "eventDate_${i}"></div>`);
-		$('.Event').append(`<div class = "eventPrice_${i}"></div>`);
-	
-		$(`.eventName_${i}`).on('click', function () {
-			$(`.eventWeb_${i}`).html(`${events[i].displayEvent()}`);
-			$(`.eventDate_${i}`).html(`${events[i].displayEvent()}`);
-			$(`.eventPrice_${i}`).html(`${events[i].displayEvent()}`);
-		});
-	
+		display() {
+			return `<div class="row m-2">
+						<div class="card" style="width: 25rem">
+		  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageEvent2} alt="Card image cap">
+		 				<div class="card-body text-center">
+							<ul class="text-center">
+								<li> ${this.eventName2} </li>
+								<li> ${this.eventWeb2} </li>
+								<li> ${this.eventDate2} </li>
+								<li> Ticket-price: ${this.eventPrice2} </li>
+							</ul>
+							<a href="https://events.wien.info/de/" class="btn btn-primary">Discover events in Vienna!</a>
+		  				</div>
+					</div></div>`;
+			
+			}	
 	
 	};
 	
-});
+	new Event2('a', 'b', 'c', 'd', 'CATS - THE MUSICAL', 'www.catsmusical.at', 'Fr., 15.12.2020', '120€', 'cats.jpg');
+	new Event2('a', 'b', 'c', 'd', 'GUNS´n ROSES', 'www.gunsandroses.com', 'Sat, 09.06.2020' , '95.50€', 'guns.png');
+
+
+	for (let i=0; i<arrayLocation.length; i++) {
+
+	document.getElementById('wrapper').innerHTML += arrayLocation[i].display()
+}

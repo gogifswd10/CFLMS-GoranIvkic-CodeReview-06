@@ -4,23 +4,79 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   	<style href="styles/style.css"></style>
-
 
 	<title>Travel-o-matic Blog</title>
+
+				
+	<style>	/*STYLE STYLE STYLE STYLE*/
+		@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+		* 	{
+			margin: 0
+			padding: 0
+		}	
+		ul {
+			list-style-type: none;
+		}
+
+		body {
+			background-color: #C0DF23;
+			font-family: 'Happy Monkey', cursive;
+			font-weight: bold;
+		}
+		#wrapper {
+			display: flex;
+			justify-content: space-around;
+		}
+		.card{
+			border: 2px solid grey;
+			box-shadow: 0px 2px 13px 13px rgba(207,192,207,0.41);
+			-webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 6px 11px -1px rgba(250,255,64,0); 
+			box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 6px 11px -1px rgba(250,255,64,0);
+		}
+
+		.jumbotron {
+			display: flex; 
+			align-items: flex-end;
+			height: 350px;
+		    margin-bottom: 25px;
+		    background-image: url(img/staatsoper.jpg);
+		    background-position: 0% 25%;
+		    background-size: cover;
+		    color: white;
+		    text-shadow: black 0.3em 0.3em 0.3em;
+		}
+	
+	</style>
 </head>
 
 <body>
+	<header> <!-- JUMBOTRONE + NAVBAR -->
+		<nav class="navbar sticky-top">
+  			<a class="navbar-brand" href="https://www.lonelyplanet.com/austria/vienna">Expierience Vienna</a>
+		</nav>
 
-	<div id="bootstrapWrapper">
+		<div class="jumbotron jumbotron-fluid text-center">
+ 			 <div class="container">
+    			<h1 class="display-4">Welcome to Vienna!</h1>
+    			<p class="lead">"When will you realize, Vienna waits for you?"<br> - Billy Joel</p>
+  			</div>
+		</div>
+	</header>
+
+	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mx-3" id="wrapper">
+
+
+	</div>
+
+
+			<!-- FOOTER -->
+	<footer>
+		<nav class="navbar fixed-bottom navbar-light bg-light">
+  			<a class="navbar-brand" href="index.html">HOME</a>
+		</nav>
+	</footer>
 		
-				
-	</div> <!-- CLOSE bootstrapwrapper CLOSE -->
-		
-
-
-
-
 
 
  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
