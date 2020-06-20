@@ -25,7 +25,7 @@ var Location2 = /** @class */ (function () {
         arrayLocation.push(this);
     }
     Location2.prototype.display = function () {
-        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageName + " alt=\"Card image cap\">\n\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t<li><h2> " + this.city + " <h2></li>\n\t\t\t\t\t\t\t\t\t<li><h5> " + this.zip + " <h5></li>\n\t\t\t\t\t\t\t\t\t<li><h4> " + this.address + " <h4></li>\n\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://www.likealocalguide.com/vienna\" role=\"button\">Vienna City Guide</a>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t\t\t\t\t<img class=\"card-img-top d-sm-none d-md-block\" style=\"height: 18rem\" src=img/" + this.imageName + " alt=\"Card image cap\">\n\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t<li><h2> " + this.city + " <h2></li>\n\t\t\t\t\t\t\t\t\t<li><h5> " + this.zip + " <h5></li>\n\t\t\t\t\t\t\t\t\t<li><h4> " + this.address + " <h4></li>\n\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://www.likealocalguide.com/vienna\" role=\"button\">Vienna City Guide</a>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
     };
     return Location2;
 }());
@@ -50,7 +50,7 @@ var Restaurant = /** @class */ (function (_super) {
         return _this;
     }
     Restaurant.prototype.display = function () {
-        return "<div class=\"row m-2\">\n\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t  \t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageRest + " alt=\"Card image cap\">\n\t\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t\t<li> " + this.restaurantName + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> Food: " + this.typeOfFood + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> " + this.phone + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> " + this.web + " </li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.likealocalguide.com/vienna/eating\" class=\"btn btn-primary\">Discover Vienna's kitchen!</a>\n\t\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t\t\t  \t\t\t\t\t<img class=\"card-img-top d-sm-none d-md-block\" style=\"height: 18rem\" src=img/" + this.imageRest + " alt=\"Card image cap\">\n\t\t\t\t \t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t\t<li> " + this.restaurantName + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> Food: " + this.typeOfFood + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> " + this.phone + " </li>\n\t\t\t\t\t\t\t\t\t\t<li> " + this.web + " </li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.likealocalguide.com/vienna/eating\" class=\"btn btn-primary\">Discover Vienna's kitchen!</a>\n\t\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
     };
     return Restaurant;
 }(Location2));
@@ -75,7 +75,7 @@ var Event2 = /** @class */ (function (_super) {
         return _this;
     }
     Event2.prototype.display = function () {
-        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t  \t\t\t\t\t\t<img class=\"card-img-top\" style=\"height: 18rem\" src=img/" + this.imageEvent2 + " alt=\"Card image cap\">\n\t\t \t\t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t<li> " + this.eventName2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> " + this.eventWeb2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> " + this.eventDate2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> Ticket-price: " + this.eventPrice2 + " </li>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t<a href=\"https://events.wien.info/de/\" class=\"btn btn-primary\">Discover events in Vienna!</a>\n\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
+        return "<div class=\"row m-2\">\n\t\t\t\t\t\t<div class=\"card\" style=\"width: 25rem\">\n\t\t  \t\t\t\t\t\t<img class=\"card-img-top d-sm-none d-md-block\" style=\"height: 18rem\" src=img/" + this.imageEvent2 + " alt=\"Card image cap\">\n\t\t \t\t\t\t\t<div class=\"card-body text-center\">\n\t\t\t\t\t\t\t\t<ul class=\"text-center\">\n\t\t\t\t\t\t\t\t\t<li> " + this.eventName2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> " + this.eventWeb2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> " + this.eventDate2 + " </li>\n\t\t\t\t\t\t\t\t\t<li> Ticket-price: " + this.eventPrice2 + " </li>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t<a href=\"https://events.wien.info/de/\" class=\"btn btn-primary\">Discover events in Vienna!</a>\n\t\t\t  \t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
     };
     return Event2;
 }(Location2));

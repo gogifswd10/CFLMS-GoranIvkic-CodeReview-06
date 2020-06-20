@@ -18,7 +18,7 @@ let arrayLocation:Array<any> = [];
 			
 			return `<div class="row m-2">
 						<div class="card" style="width: 25rem">
-								<img class="card-img-top" style="height: 18rem" src=img/${this.imageName} alt="Card image cap">
+								<img class="card-img-top d-sm-none d-md-block" style="height: 18rem" src=img/${this.imageName} alt="Card image cap">
 			 				<div class="card-body text-center">
 								<ul class="text-center">
 									<li><h2> ${this.city} <h2></li>
@@ -59,7 +59,7 @@ let arrayLocation:Array<any> = [];
 		display() {
 				return `<div class="row m-2">
 							<div class="card" style="width: 25rem">
-				  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageRest} alt="Card image cap">
+				  					<img class="card-img-top d-sm-none d-md-block" style="height: 18rem" src=img/${this.imageRest} alt="Card image cap">
 				 				<div class="card-body text-center">
 									<ul class="text-center">
 										<li> ${this.restaurantName} </li>
@@ -100,7 +100,7 @@ let arrayLocation:Array<any> = [];
 		display() {
 			return `<div class="row m-2">
 						<div class="card" style="width: 25rem">
-		  						<img class="card-img-top" style="height: 18rem" src=img/${this.imageEvent2} alt="Card image cap">
+		  						<img class="card-img-top d-sm-none d-md-block" style="height: 18rem" src=img/${this.imageEvent2} alt="Card image cap">
 		 					<div class="card-body text-center">
 								<ul class="text-center">
 									<li> ${this.eventName2} </li>
