@@ -58,18 +58,18 @@ let arrayLocation:Array<any> = [];
 
 		display() {
 				return `<div class="row m-2">
-								<div class="card" style="width: 25rem">
-					  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageRest} alt="Card image cap">
-					 				<div class="card-body text-center">
-										<ul class="text-center">
-											<li> ${this.restaurantName} </li>
-											<li> Food: ${this.typeOfFood} </li>
-											<li> ${this.phone} </li>
-											<li> ${this.web} </li>
-										</ul>
+							<div class="card" style="width: 25rem">
+				  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageRest} alt="Card image cap">
+				 				<div class="card-body text-center">
+									<ul class="text-center">
+										<li> ${this.restaurantName} </li>
+										<li> Food: ${this.typeOfFood} </li>
+										<li> ${this.phone} </li>
+										<li> ${this.web} </li>
+									</ul>
 										<a href="https://www.likealocalguide.com/vienna/eating" class="btn btn-primary">Discover Vienna's kitchen!</a>
-					  				</div>
-								</div>
+				  				</div>
+							</div>
 						</div>`;
 			
 			}	
@@ -100,17 +100,18 @@ let arrayLocation:Array<any> = [];
 		display() {
 			return `<div class="row m-2">
 						<div class="card" style="width: 25rem">
-		  					<img class="card-img-top" style="height: 18rem" src=img/${this.imageEvent2} alt="Card image cap">
-		 				<div class="card-body text-center">
-							<ul class="text-center">
-								<li> ${this.eventName2} </li>
-								<li> ${this.eventWeb2} </li>
-								<li> ${this.eventDate2} </li>
-								<li> Ticket-price: ${this.eventPrice2} </li>
-							</ul>
-							<a href="https://events.wien.info/de/" class="btn btn-primary">Discover events in Vienna!</a>
-		  				</div>
-					</div></div>`;
+		  						<img class="card-img-top" style="height: 18rem" src=img/${this.imageEvent2} alt="Card image cap">
+		 					<div class="card-body text-center">
+								<ul class="text-center">
+									<li> ${this.eventName2} </li>
+									<li> ${this.eventWeb2} </li>
+									<li> ${this.eventDate2} </li>
+									<li> Ticket-price: ${this.eventPrice2} </li>
+								</ul>
+									<a href="https://events.wien.info/de/" class="btn btn-primary">Discover events in Vienna!</a>
+			  				</div>
+						</div>
+					</div>`;
 			
 			}	
 	
